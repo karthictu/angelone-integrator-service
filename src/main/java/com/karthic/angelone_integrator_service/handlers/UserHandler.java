@@ -11,6 +11,10 @@ public class UserHandler {
         return null;
     }
 
+    public Mono<ServerResponse> getUserProfile(ServerRequest request) {
+        return null;
+    }
+
     public Mono<ServerResponse> generateToken(ServerRequest request) {
         return null;
     }

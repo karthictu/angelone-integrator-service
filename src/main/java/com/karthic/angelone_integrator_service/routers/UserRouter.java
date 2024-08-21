@@ -16,7 +16,8 @@ public class UserRouter {
     @Bean
     public RouterFunction<ServerResponse> routes(UserHandler userHandler) {
         return RouterFunctions.nest(RequestPredicates.path(CommonConstants.USERS_API_BASE_URL),
-                RouterFunctions.route().POST(CommonConstants.ENDPOINT_LOGIN, userHandler::loginUser)
+                RouterFunctions.route().GET(userHandler::getUserProfile)
+                        .POST(CommonConstants.ENDPOINT_LOGIN, userHandler::loginUser)
                         .POST(CommonConstants.ENDPOINT_TOKEN, userHandler::generateToken)
                         .POST(CommonConstants.ENDPOINT_LOGOUT, userHandler::logoutUser).build());
     }
