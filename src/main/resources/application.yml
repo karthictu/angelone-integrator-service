@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: angelone-integrator-service
+  datasource:
+    url: ${db_url}
+    username: ${db_username}
+    password: ${db_password}
+angelone:
+  base-url: ${angel_one_baseurl}
+  api-key: ${api-key}
+  endpoints:
+    create-order: ${angelone.base-url}/placeOrder
+    modify-order: ${angelone.base-url}/modifyOrder
+    cancel-order: ${angelone.base-url}/cancelOrder
+    get-ltp: ${angelone.base-url}/getLtpData
+    order-details: ${angelone.base-url}/details/{UniqueOrderID}
